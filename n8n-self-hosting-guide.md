@@ -45,9 +45,35 @@ Open your Linux terminal (or WSL2 shell) and execute the following commands to s
 mkdir -p ~/n8n-stack && cd ~/n8n-stack
 ```
 
-Create a file named `.env` to store database passwords and application settings securely:
+### Step 1: Prepare the Project Directory and Environment Configuration
 
-```env
+Open your Linux terminal (or WSL2 shell) and execute the following commands to set up the project folder:
+
+```
+mkdir -p ~/n8n-stack &amp;&amp; cd ~/n8n-stack
+
+```
+
+#### How to Create and Open the `.env` File
+
+You can create and open the `.env` file using terminal commands or Graphical User Interface (GUI):
+
+* **Option A — Terminal Editor (Nano / VS Code)**:  
+```  
+# Open with terminal text editor  
+nano .env  
+# Or open directly in VS Code (if installed in WSL2/Linux)  
+code .env  
+```
+* **Option B — Windows File Explorer (GUI)**: From your WSL2 terminal inside `~/n8n-stack`, open Windows File Explorer directly into the Linux folder by running:  
+```  
+explorer.exe .  
+```  
+In File Explorer, right-click to create a new text file named `.env` and edit it with Notepad or your preferred Windows text editor.
+* **Option C — One-Line Terminal Command (Automated)**: Paste the following block directly into your terminal to write the file automatically:
+
+```
+cat &lt;&lt; 'EOF' &gt; ~/.n8n-stack/.env
 # General Settings
 GENERIC_TIMEZONE=UTC
 TZ=UTC
@@ -66,11 +92,44 @@ N8N_ENFORCE_SETTINGS_FILE_PERMISSIONS=true
 
 # Security Encryption Key (Generate a random 32-character hex string)
 N8N_ENCRYPTION_KEY=your_random_32_character_encryption_key
+EOF
+
+```
+
+If creating the file manually via Option A or B, paste the following configuration into your `.env` file and save:
+
+```
+# General Settings
+GENERIC_TIMEZONE=UTC
+TZ=UTC
+
+# Database Configuration
+POSTGRES_USER=n8n_db_user
+POSTGRES_PASSWORD=your_secure_postgres_password_here
+POSTGRES_DB=n8n_database
+
+# n8n Instance Configuration
+N8N_HOST=localhost
+N8N_PORT=5678
+N8N_PROTOCOL=http
+WEBHOOK_URL=http://localhost:5678/
+N8N_ENFORCE_SETTINGS_FILE_PERMISSIONS=true
+
+# Security Encryption Key (Generate a random 32-character hex string)
+N8N_ENCRYPTION_KEY=your_random_32_character_encryption_key
+
 ```
 
 ### Step 2: Create the `docker-compose.yml` File
 
-Author the primary `docker-compose.yml` file inside `~/n8n-stack`:
+Next, create the primary container orchestration configuration file `docker-compose.yml` inside `~/n8n-stack`.
+
+#### How to Create and Open `docker-compose.yml`
+
+* **Terminal Editor**: Run `nano docker-compose.yml` or `code docker-compose.yml` in your terminal.
+* **GUI File Explorer**: Run `explorer.exe .` in WSL2, right-click inside the `n8n-stack` folder, select **New Text Document**, rename it to `docker-compose.yml` (ensuring the `.txt` extension is removed), and open it in your editor.
+
+Paste the following container definition into `docker-compose.yml` and save:
 
 ```yaml
 version: '3.8'
