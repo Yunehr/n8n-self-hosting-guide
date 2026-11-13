@@ -45,6 +45,8 @@ Open your Linux terminal (or WSL2 shell) and execute the following commands to s
 mkdir -p ~/n8n-stack && cd ~/n8n-stack
 ```
 
+For Windows
+
 ### Step 1: Prepare the Project Directory and Environment Configuration
 
 Open your Linux terminal (or WSL2 shell) and execute the following commands to set up the project folder:
