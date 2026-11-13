@@ -15,3 +15,6 @@ This repository provides an end-to-end, zero-cost guide to self-hosting a modula
 ## How to Use This Repo
 
 Use this blueprint as a step-by-step reference or automation template whenever you need to deploy, rebuild, or migrate your local AI agent network across Windows, macOS, or Linux/ARM devices.
+
+## Documentation
+#### [n8n Self Hosting Guide](n8n-self-hosting-guide.md)
