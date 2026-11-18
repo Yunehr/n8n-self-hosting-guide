@@ -4,6 +4,16 @@
 
 This repository provides an end-to-end, zero-cost guide to self-hosting a modular **n8n workflow automation platform** integrated with **Ollama** for local AI inference. Built using **Docker Compose**, it incurs zero subscription fees (only local hardware electricity) and provides a clear path from a Windows WSL2 Proof of Concept (PoC) to a permanent edge deployment on a Raspberry Pi 5 or home server.
 
+>[!Important]
+>This guide is mainly for personal use and likely is missing information for standard practice. If you want to add contributions to this project, please follow standard contribution guidelines in CONTRIBUTING.md.
+>
+>Example contributions:
+>- Review/edit.
+>- Add clarification to a section
+>- Update a section
+>- Add a new portion to the guide
+>- etc...
+
 ## Key Architecture &amp; Features
 
 * **Zero-Cost Local AI Stack**: Runs n8n, PostgreSQL, and Ollama (`llama3.2`) in isolated Docker containers with zero external API dependencies.
